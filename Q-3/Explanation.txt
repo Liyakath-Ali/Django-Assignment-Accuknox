@@ -1,7 +1,0 @@
-Q3: Do Django signals run in the same database transaction as the caller?
-Answer: By default, Django signals do not automatically run within the same transaction unless wrapped in transaction.on_commit(). However, pre_save and post_save signals occur in the same request transaction.
-
-In the python code:
-1. We use transaction.atomic() to start a transaction.
-2. transaction.get_autocommit() checks whether the transaction is active.
-3. Since autocommit is disabled inside the block but enabled in the signal, it proves that signals do not run within same transaction
