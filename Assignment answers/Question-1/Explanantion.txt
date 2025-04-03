@@ -1,0 +1,6 @@
+Q1 : Are Django signals Executed synchronously or asynchronously?
+Answer: By default, Django signals are executed synchronously. This means that the signal handlers are executed in the same thread and process as the event that triggered them.
+
+1. We define a signal handler for post_save of the user model.
+2. We print the current thread in both the main function and the signal handler.
+3. Since the output will show the same thread name for both, it proves that signals execute synchronously.

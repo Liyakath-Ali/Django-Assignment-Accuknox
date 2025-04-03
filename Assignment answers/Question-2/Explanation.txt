@@ -1,0 +1,6 @@
+Q2: Do Django signals run in the same thread as the caller?
+Answer : Yes, Django run in the same thread as the caller unless explicitly executed asynchronously.
+
+1. The function signal_handler in the program prints the thread name.
+2. The main thread name is printed before and after saving a user.
+3. Since both outputs will match, it confirms that Django signals run in same thread.
